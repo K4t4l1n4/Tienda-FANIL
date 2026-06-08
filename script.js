@@ -2115,12 +2115,12 @@ const themeToggle = document.getElementById("themeToggle");
 
 /* Logo único: cambia el src según color/tema activo (en vez de cargar 5 imágenes) */
 const LOGO_LIGHT = {
-  blue:   "img/logo-fanil-modo-claro-azul.jpg",
-  green:  "img/logo-fanil-para-modo-claro.jpg",
-  yellow: "img/logo-fanil-modo-claro-amarillo.jpg",
-  purple: "img/logo-fanil-modo-claro-morado.jpg"
+  blue:   "img/logo-fanil-modo-claro-azul.png",
+  green:  "img/logo-fanil-para-modo-claro.png",
+  yellow: "img/logo-fanil-modo-claro-amarillo.png",
+  purple: "img/logo-fanil-modo-claro-morado.png"
 };
-const LOGO_DARK = "img/logo-fanil.jpg";
+const LOGO_DARK = "img/logo-fanil.png";
 function updateLogo() {
   const img = document.getElementById("logoImg");
   if (!img) return;
