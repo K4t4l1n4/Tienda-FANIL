@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-color="blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fanil - Lo esencial para tu hogar. Productos de aseo e higiene de calidad a precios accesibles.">
+  <title>Fanil - Lo esencial para tu hogar</title>
+
+  <!-- Open Graph / redes sociales — IMPORTANTE: reemplaza la URL del dominio cuando publiques -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fanil - Lo esencial para tu hogar">
+  <meta property="og:description" content="Productos de aseo e higiene de calidad a precios accesibles. Envío a todo Chile.">
+  <meta property="og:image" content="img/logo-fanil.png">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fanil - Lo esencial para tu hogar">
+  <meta name="twitter:description" content="Productos de aseo e higiene de calidad a precios accesibles. Envío a todo Chile.">
+  <meta name="twitter:image" content="img/logo-fanil.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/logo-fanil.png">
+  <link rel="apple-touch-icon" href="img/logo-fanil.png">
+
+  <!-- Datos estructurados (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Fanil",
+    "description": "Productos de aseo e higiene de calidad a precios accesibles.",
+    "slogan": "Lo esencial para tu hogar",
+    "areaServed": "CL",
+    "telephone": "+56912345678",
+    "email": "contacto@fanil.cl"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="info-banner" id="infoBanner">
+    <div class="container info-banner-inner">
+      <div class="banner-items">
+        <span class="banner-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Envío a todo Chile
+        </span>
+        <span class="banner-sep">·</span>
+        <span class="banner-item">Compra mínima $15.000</span>
+        <span class="banner-sep">·</span>
+        <span class="banner-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Pago seguro con MercadoPago
+        </span>
+      </div>
+      <button class="banner-close" id="bannerClose" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <a href="#inicio" class="logo">
+        <div class="logo-wrap">
+          <!-- Logo único; el src se cambia por JS según color/tema activo -->
+          <img src="img/logo-fanil-modo-claro-azul.png" alt="Fanil" class="logo-img" id="logoImg"
+               onerror="this.style.display='none'; document.getElementById('logoText').style.display='inline-block'">
+          <!-- Fallback texto si no carga la imagen -->
+          <span class="logo-text" id="logoText" style="display:none">FANIL</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#categorias" class="nav-link">Categorías</a>
+        <a href="#productos" class="nav-link">Productos</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <div class="palette-wrapper" id="paletteWrapper">
+          <button class="icon-btn" id="paletteToggle" title="Cambiar color" aria-label="Paleta de colores">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+            </svg>
+          </button>
+          <div class="color-palette" id="colorPalette">
+            <button class="color-dot active" data-color="blue"   style="background:#2563EB" title="Azul"   aria-label="Tema azul"></button>
+            <button class="color-dot"        data-color="green"  style="background:#15803D" title="Verde"  aria-label="Tema verde"></button>
+            <button class="color-dot"        data-color="yellow" style="background:#B45309" title="Ámbar"  aria-label="Tema ámbar"></button>
+            <button class="color-dot"        data-color="purple" style="background:#7C3AED" title="Morado" aria-label="Tema morado"></button>
+          </div>
+        </div>
+
+        <button class="icon-btn" id="themeToggle" title="Cambiar modo" aria-label="Cambiar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="icon-btn cart-btn" id="cartToggle" title="Ver carrito" aria-label="Carrito">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge" aria-hidden="true">0</span>
+        </button>
+
+        <button class="icon-btn hamburger-btn" id="menuBtn" aria-label="Abrir menú">
+          <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CARRITO LATERAL ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-modal="true" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button class="icon-btn" id="closeCart" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="cart-empty-svg">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <p>Tu carrito está vacío</p>
+        <span>Agrega algunos productos para comenzar</span>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal"><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
+      <div class="cart-shipping"><span>Envío</span><span class="shipping-free">A coordinar</span></div>
+      <div class="cart-total-row"><strong>Total</strong><strong id="cartTotal">$0</strong></div>
+      <a class="btn btn-whatsapp w-full" id="cartWaBtn" href="#" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Pedir por WhatsApp
+      </a>
+      <button class="btn btn-primary w-full" id="checkoutBtn">
+        Finalizar Compra
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <button class="btn btn-ghost w-full" id="clearCartBtn">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <!-- ===== MODAL DE PAGO ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Completar pedido">
+      <div class="modal-header">
+        <h2>Completar Pedido</h2>
+        <button class="icon-btn" id="closeModal" aria-label="Cerrar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="checkout-form" id="checkoutForm" novalidate>
+          <h3 class="form-section-title">Tus datos</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientName">Nombre completo *</label>
+              <input type="text" id="clientName" placeholder="Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">Teléfono *</label>
+              <input type="tel" id="clientPhone" placeholder="+56 9 1234 5678" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">Correo electrónico *</label>
+            <input type="email" id="clientEmail" placeholder="juan@correo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="clientAddress">Dirección de entrega *</label>
+            <input type="text" id="clientAddress" placeholder="Calle, número, ciudad, región" required>
+          </div>
+          <div class="form-group">
+            <label for="clientNotes">Comentarios (opcional)</label>
+            <textarea id="clientNotes" placeholder="Instrucciones de entrega, referencias, etc." rows="2"></textarea>
+          </div>
+          <h3 class="form-section-title">Resumen del pedido</h3>
+          <div class="order-summary" id="orderSummary"></div>
+          <div class="order-total-row">
+            <strong>Total productos:</strong>
+            <strong id="modalTotal">$0</strong>
+          </div>
+          <button type="submit" class="btn btn-primary w-full btn-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Pagar con MercadoPago
+          </button>
+          <p class="payment-note">El despacho se coordina aparte. Pago seguro procesado por MercadoPago.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== QUICK VIEW MODAL ===== -->
+  <div class="qv-overlay" id="qvOverlay">
+    <div class="qv-modal" id="qvModal" role="dialog" aria-modal="true" aria-label="Vista rápida de producto">
+      <button class="qv-close icon-btn" id="qvClose" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="qv-layout">
+        <div class="qv-img-side">
+          <img id="qvImg" src="" alt="" class="qv-img">
+        </div>
+        <div class="qv-info-side">
+          <div class="product-category-tag" id="qvCategory"></div>
+          <h2 class="qv-name" id="qvName"></h2>
+          <p class="qv-desc" id="qvDesc"></p>
+          <div class="qv-price-wrap">
+            <span class="product-original-price" id="qvOriginalPrice"></span>
+            <span class="qv-price" id="qvPrice"></span>
+          </div>
+          <div class="qv-actions">
+            <button class="btn btn-primary btn-lg" id="qvAddBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              Agregar al carrito
+            </button>
+            <a class="btn btn-whatsapp" id="qvWaBtn" href="#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-deco hero-deco-1"></div>
+      <div class="hero-deco hero-deco-2"></div>
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-badge">Envío a todo Chile</div>
+          <h1 class="hero-title">
+            Lo esencial para<br>
+            <span class="hero-highlight">tu hogar</span>
+          </h1>
+          <p class="hero-subtitle">
+            Productos de aseo e higiene de calidad a precios accesibles.
+            Todo lo que necesitas en un solo lugar.
+          </p>
+          <div class="hero-actions">
+            <a href="#productos" class="btn btn-primary btn-lg">Ver Productos</a>
+            <a href="#nosotros" class="btn btn-outline btn-lg">Conocer más</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><strong id="statProducts"></strong><span>Productos</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><strong id="statCategories"></strong><span>Categorías</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><strong id="statBrands"></strong><span>Marcas</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-card hvc-1">
+            <div class="hvc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/><rect x="2" y="3" width="20" height="18" rx="2"/></svg>
+            </div>
+            <span>Detergentes</span>
+          </div>
+          <div class="hero-visual-card hvc-2">
+            <div class="hvc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <span>Lavalozas</span>
+          </div>
+          <div class="hero-visual-card hvc-3">
+            <div class="hvc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </div>
+            <span>Jabones</span>
+          </div>
+          <div class="hero-visual-card hvc-4">
+            <div class="hvc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 22V12l4-8h8l4 8v10H4z"/><path d="M4 14h16"/><path d="M12 14v8"/></svg>
+            </div>
+            <span>Limpiapisos</span>
+          </div>
+          <div class="hero-visual-badge">
+            <strong id="statBadge"></strong><span>productos disponibles</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BARRA DE BENEFICIOS -->
+    <section class="features-bar">
+      <div class="container features-grid">
+
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>Envío a todo Chile</strong>
+            <span>Rápido y seguro</span>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>Calidad garantizada</strong>
+            <span>Productos seleccionados</span>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>Atención personalizada</strong>
+            <span>Siempre disponibles</span>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>Pago seguro</strong>
+            <span>MercadoPago</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestras Categorías</h2>
+          <p class="section-subtitle">Encuentra todo lo que necesitas organizado por categoría</p>
+        </div>
+        <div class="categories-grid">
+
+          <div class="category-card" onclick="filterProducts('detergentes'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18M3 12h18M3 18h18"/>
+                <rect x="2" y="3" width="20" height="18" rx="2"/>
+              </svg>
+            </div>
+            <h3>Detergentes</h3>
+            <p>Para la ropa de toda la familia. Limpieza profunda y duradera.</p>
+            <span class="category-count">7 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('lavalozas'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <h3>Lavalozas</h3>
+            <p>Elimina la grasa al instante. Cuida tus manos mientras limpia.</p>
+            <span class="category-count">6 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('jabones-limpieza'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+              </svg>
+            </div>
+            <h3>Jabones</h3>
+            <p>Jabones y productos multiusos para el cuidado del hogar.</p>
+            <span class="category-count">2 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('limpiapisos'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21 L8 10 L16 10 L21 21"/>
+                <line x1="3" y1="21" x2="21" y2="21"/>
+                <line x1="8" y1="10" x2="8" y2="6"/>
+                <circle cx="8" cy="4" r="2"/>
+              </svg>
+            </div>
+            <h3>Limpiapisos</h3>
+            <p>Para pisos brillantes con fragancias duraderas.</p>
+            <span class="category-count">5 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('papeles'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3>Papeles</h3>
+            <p>Papel higiénico, toallas de papel y servilletas para el hogar.</p>
+            <span class="category-count">7 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('animales'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5z"/>
+                <path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                <circle cx="6" cy="8" r="2"/>
+                <circle cx="18" cy="8" r="2"/>
+              </svg>
+            </div>
+            <h3>Animales</h3>
+            <p>Arena sanitaria y productos de higiene para tus mascotas.</p>
+            <span class="category-count">1 producto</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('desodorantes'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+                <path d="M10 2v3h4V2"/>
+                <circle cx="12" cy="14" r="2"/>
+                <path d="M12 10v2"/>
+              </svg>
+            </div>
+            <h3>Desodorantes</h3>
+            <p>Axe, Dove, Rexona y más para protección y frescura todo el día.</p>
+            <span class="category-count">9 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('utensilios-cocina'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                <path d="M7 2v20"/>
+                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 .6.4 1 1 1h4z"/>
+              </svg>
+            </div>
+            <h3>Utensilios de Cocina</h3>
+            <p>Exprimidores, encendedores, pilas, ampolletas y más para el hogar.</p>
+            <span class="category-count">7 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('cera-pisos'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="14" width="18" height="5" rx="1"/>
+                <path d="M5 14V9a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v5"/>
+                <path d="M8 8V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/>
+                <line x1="12" y1="19" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3>Cera de Pisos</h3>
+            <p>Ceras y pinturas para proteger, colorear y dar brillo a tus pisos.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('ambiental'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+            </div>
+            <h3>Desodorante Ambiental</h3>
+            <p>Aerosoles para ambientar y eliminar olores en el hogar.</p>
+            <span class="category-count">2 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('bano'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17h10M5 21h14M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14"/>
+                <path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+              </svg>
+            </div>
+            <h3>Baño</h3>
+            <p>Limpiadores de inodoro, pastillas y desinfectantes para el baño.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('cuidado-personal'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3>Cuidado Personal</h3>
+            <p>Cremas, desodorantes y cuidado de la piel para toda la familia.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('higiene-femenina'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/>
+                <path d="M12 12v10M9 19h6"/>
+              </svg>
+            </div>
+            <h3>Higiene Femenina</h3>
+            <p>Toallas femeninas para el cuidado y bienestar de la mujer.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('acondicionador'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3V6H9v6z"/>
+                <path d="M6 6h12M6 3h12"/>
+                <path d="M8 21c1.1.63 2.5 1 4 1s2.9-.37 4-1"/>
+              </svg>
+            </div>
+            <h3>Acondicionador</h3>
+            <p>Acondicionadores para todo tipo de cabello en doypacks y frascos.</p>
+            <span class="category-count">6 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('shampoo'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a5 5 0 0 1 5 5v3H7V7a5 5 0 0 1 5-5z"/>
+                <path d="M7 10c0 5.5 2 9 5 9s5-3.5 5-9"/>
+                <path d="M9 21h6"/>
+              </svg>
+            </div>
+            <h3>Shampoo</h3>
+            <p>Shampoos en doypack y frasco para todo tipo de cabello.</p>
+            <span class="category-count">7 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('higiene-bucal'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.5 2h11a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H15l-1.5 14h-3L9 7H6.5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+              </svg>
+            </div>
+            <h3>Higiene Bucal</h3>
+            <p>Cepillos de dientes y productos para el cuidado dental.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('quitamanchas'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+                <path d="M9 15h6"/>
+              </svg>
+            </div>
+            <h3>Suavizante y Quitamanchas</h3>
+            <p>Suavizantes concentrados y quitamanchas para toda la ropa.</p>
+            <span class="category-count">6 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('limpieza'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 2h5L17 7H7L9.5 2z"/>
+                <path d="M7 7v3a5 5 0 0 0 10 0V7"/>
+                <path d="M12 12v7M9 19h6"/>
+              </svg>
+            </div>
+            <h3>Limpieza</h3>
+            <p>Cloro líquido, cloro gel y desinfectantes para el hogar.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('accesorios'); scrollToProducts()">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3>Accesorios Hogar</h3>
+            <p>Esponjas, bolsas, servilletas y más para tu hogar.</p>
+            <span class="category-count">3 productos</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="section section-alt" id="productos">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestros Productos</h2>
+          <p class="section-subtitle">Todo lo esencial para tu hogar a precios accesibles</p>
+        </div>
+        <div class="filter-sticky-area">
+          <div class="filter-bar" role="group" aria-label="Filtrar productos">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="detergentes">Detergentes</button>
+            <button class="filter-btn" data-filter="lavalozas">Lavalozas</button>
+            <button class="filter-btn" data-filter="jabones-limpieza">Jabones</button>
+            <button class="filter-btn" data-filter="limpiapisos">Limpiapisos</button>
+            <button class="filter-btn" data-filter="cuidado-personal">Cuidado Personal</button>
+            <button class="filter-btn" data-filter="papeles">Papeles</button>
+            <button class="filter-btn" data-filter="bano">Baño</button>
+            <button class="filter-btn" data-filter="ambiental">Ambiental</button>
+            <button class="filter-btn" data-filter="higiene-femenina">Higiene Femenina</button>
+            <button class="filter-btn" data-filter="limpieza">Limpieza</button>
+            <button class="filter-btn" data-filter="shampoo">Shampoo</button>
+            <button class="filter-btn" data-filter="acondicionador">Acondicionador</button>
+            <button class="filter-btn" data-filter="higiene-bucal">Higiene Bucal</button>
+            <button class="filter-btn" data-filter="quitamanchas">Suavizante y Quitamanchas</button>
+            <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+            <button class="filter-btn" data-filter="cera-pisos">Cera de Pisos</button>
+            <button class="filter-btn" data-filter="utensilios-cocina">Utensilios de Cocina</button>
+            <button class="filter-btn" data-filter="desodorantes">Desodorantes</button>
+            <button class="filter-btn" data-filter="animales">Animales</button>
+          </div>
+          <div class="search-sort-bar">
+          <div class="search-wrap">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="productSearch" class="search-input" placeholder="Buscar producto..." autocomplete="off" aria-label="Buscar producto">
+            <button id="clearSearch" class="clear-search-btn" aria-label="Limpiar búsqueda" style="display:none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <select id="productSort" class="sort-select" aria-label="Ordenar productos">
+            <option value="default">Ordenar por</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="name">Nombre A-Z</option>
+          </select>
+          </div><!-- /.search-sort-bar -->
+        </div><!-- /.filter-sticky-area -->
+
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <!-- MARCAS -->
+    <section class="section-brands" id="marcas">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Marcas que ofrecemos</h2>
+          <p class="section-subtitle">Trabajamos con las mejores marcas del mercado chileno</p>
+        </div>
+      </div>
+      <div class="brands-track">
+        <div class="brands-scroll">
+          <div class="brand-chip">Brink's</div>
+          <div class="brand-chip">Biofrescura</div>
+          <div class="brand-chip">OMO</div>
+          <div class="brand-chip">Quix</div>
+          <div class="brand-chip">Teddy</div>
+          <div class="brand-chip">Dove</div>
+          <div class="brand-chip">Le Sancy</div>
+          <div class="brand-chip">Protex</div>
+          <div class="brand-chip">Ballerina</div>
+          <div class="brand-chip">Lux</div>
+          <div class="brand-chip">Brillex</div>
+          <div class="brand-chip">Spum</div>
+          <div class="brand-chip">Virginia</div>
+          <div class="brand-chip">Popeye</div>
+          <!-- duplicado para efecto infinito (oculto a lectores de pantalla) -->
+          <div class="brand-chip" aria-hidden="true">Brink's</div>
+          <div class="brand-chip" aria-hidden="true">Biofrescura</div>
+          <div class="brand-chip" aria-hidden="true">OMO</div>
+          <div class="brand-chip" aria-hidden="true">Quix</div>
+          <div class="brand-chip" aria-hidden="true">Teddy</div>
+          <div class="brand-chip" aria-hidden="true">Dove</div>
+          <div class="brand-chip" aria-hidden="true">Le Sancy</div>
+          <div class="brand-chip" aria-hidden="true">Protex</div>
+          <div class="brand-chip" aria-hidden="true">Ballerina</div>
+          <div class="brand-chip" aria-hidden="true">Lux</div>
+          <div class="brand-chip" aria-hidden="true">Brillex</div>
+          <div class="brand-chip" aria-hidden="true">Spum</div>
+          <div class="brand-chip" aria-hidden="true">Virginia</div>
+          <div class="brand-chip" aria-hidden="true">Popeye</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="section section-primary" id="nosotros">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-content">
+            <div class="section-label-light">Nuestra Historia</div>
+            <h2 class="section-title-light">Quienes somos</h2>
+            <p class="about-text">En <strong>Fanil</strong> creemos que lo esencial no debería costar demasiado. Nacimos con la misión de acercar productos de aseo e higiene de calidad a cada hogar chileno, a precios accesibles y con la confianza de siempre.</p>
+            <p class="about-text">Hoy somos una tienda en crecimiento, con la visión de convertirnos en una distribuidora reconocida en todo Chile, sin perder lo que nos define: cercanía, calidad y compromiso con nuestros clientes.</p>
+            <div class="about-values">
+              <div class="value-row">
+                <div class="value-check">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Precios accesibles para todos</span>
+              </div>
+              <div class="value-row">
+                <div class="value-check">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Productos de calidad garantizada</span>
+              </div>
+              <div class="value-row">
+                <div class="value-check">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Atención cercana y personalizada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="about-card about-card-1">
+              <div class="about-card-line"></div>
+              <strong>Nuestra Misión</strong>
+              <p>Llevar calidad y limpieza a cada hogar chileno con productos accesibles.</p>
+            </div>
+            <div class="about-card about-card-2">
+              <div class="about-card-line"></div>
+              <strong>Nuestra Visión</strong>
+              <p>Convertirnos en la distribuidora líder de productos de aseo en Chile.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="section section-alt" id="testimonios">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+          <p class="section-subtitle">Cientos de hogares en Chile ya confían en Fanil</p>
+        </div>
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card">
+            <div class="t-stars" role="img" aria-label="5 de 5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="t-quote">Excelente calidad a precios increíbles. Los detergentes Brink's duran el doble que otras marcas. Llegó rápido y bien embalado.</p>
+            <div class="t-author">
+              <div class="t-avatar" style="background: #2563EB">MG</div>
+              <div class="t-info">
+                <strong>María González</strong>
+                <span>Santiago, Región Metropolitana</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="t-stars" role="img" aria-label="5 de 5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="t-quote">Compro todo el aseo del hogar acá. Los precios son muy convenientes y la atención por WhatsApp es súper rápida. 100% recomendado.</p>
+            <div class="t-author">
+              <div class="t-avatar" style="background: #16A34A">CR</div>
+              <div class="t-info">
+                <strong>Carlos Rodríguez</strong>
+                <span>Valparaíso, Región de Valparaíso</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="t-stars" role="img" aria-label="5 de 5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="t-quote">Los jabones Dove y Le Sancy son mis favoritos. Los encargué el lunes y llegaron el miércoles. El packaging llegó perfecto, sin ningún daño.</p>
+            <div class="t-author">
+              <div class="t-avatar" style="background: #7C3AED">AL</div>
+              <div class="t-info">
+                <strong>Ana López</strong>
+                <span>Concepción, Región del Biobío</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section-alt" id="contacto">
+      <div class="container contact-simple">
+        <div class="section-header">
+          <h2 class="section-title">Contáctanos</h2>
+          <p class="section-subtitle">Escríbenos por WhatsApp, te respondemos de inmediato</p>
+        </div>
+        <!-- IMPORTANTE: Reemplaza el número con tu número real -->
+        <a href="https://wa.me/56912345678?text=Hola%20Fanil%2C%20me%20interesa%20un%20producto"
+           target="_blank" rel="noopener" class="btn btn-whatsapp btn-whatsapp-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">FANIL</span>
+        <p>Lo esencial para tu hogar</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#productos">Productos</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categorías</h4>
+        <a href="#productos" onclick="filterProducts('detergentes')">Detergentes</a>
+        <a href="#productos" onclick="filterProducts('lavalozas')">Lavalozas</a>
+        <a href="#productos" onclick="filterProducts('jabones-limpieza')">Jabones</a>
+        <a href="#productos" onclick="filterProducts('limpiapisos')">Limpiapisos</a>
+        <a href="#productos" onclick="filterProducts('cera-pisos')">Cera de Pisos</a>
+        <a href="#productos" onclick="filterProducts('utensilios-cocina')">Utensilios de Cocina</a>
+        <a href="#productos" onclick="filterProducts('desodorantes')">Desodorantes</a>
+        <a href="#productos" onclick="filterProducts('animales')">Animales</a>
+        <a href="#productos" onclick="filterProducts('cuidado-personal')">Cuidado Personal</a>
+        <a href="#productos" onclick="filterProducts('papeles')">Papeles</a>
+        <a href="#productos" onclick="filterProducts('bano')">Baño</a>
+        <a href="#productos" onclick="filterProducts('ambiental')">Ambiental</a>
+        <a href="#productos" onclick="filterProducts('higiene-femenina')">Higiene Femenina</a>
+        <a href="#productos" onclick="filterProducts('limpieza')">Limpieza</a>
+        <a href="#productos" onclick="filterProducts('shampoo')">Shampoo</a>
+        <a href="#productos" onclick="filterProducts('acondicionador')">Acondicionador</a>
+        <a href="#productos" onclick="filterProducts('higiene-bucal')">Higiene Bucal</a>
+        <a href="#productos" onclick="filterProducts('quitamanchas')">Suavizante y Quitamanchas</a>
+        <a href="#productos" onclick="filterProducts('accesorios')">Accesorios</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/56912345678">+56 9 1234 5678</a>
+        <a href="mailto:contacto@fanil.cl">contacto@fanil.cl</a>
+        <span>Chile</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="footerYear"></span> Fanil. Todos los derechos reservados.</p>
+        <p class="footer-tagline">Lo esencial para tu hogar</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <!-- IMPORTANTE: Reemplaza el número con tu número real -->
+  <a class="wa-float"
+     href="https://wa.me/56912345678?text=Hola%20Fanil%2C%20me%20interesa%20un%20producto"
+     target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <div class="wa-bubble">¿Deseas una cotización?</div>
+    <div class="wa-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Botón volver arriba -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
