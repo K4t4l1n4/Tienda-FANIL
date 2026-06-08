@@ -1927,52 +1927,16 @@ document.getElementById("clearCartBtn").addEventListener("click", clearCart);
 let currentFilter = "todos";
 let currentSearch = "";
 let currentSort = "default";
+const PRODUCTS_PER_PAGE = 16;
+let currentPage = 1;
+let filteredCache = [];
 
-function renderProducts(filter = currentFilter, search = currentSearch, sort = currentSort) {
-  currentFilter = filter;
-  currentSearch = search;
-  currentSort = sort;
-
-  const grid = document.getElementById("productsGrid");
-
-  // 1. Filtrar por categoría
-  let filtered = filter === "todos" ? [...products] : products.filter(p => p.category === filter);
-
-  // 2. Filtrar por búsqueda
-  if (search.trim()) {
-    const q = search.toLowerCase().trim();
-    filtered = filtered.filter(p =>
-      p.name.toLowerCase().includes(q) ||
-      p.description.toLowerCase().includes(q) ||
-      p.categoryLabel.toLowerCase().includes(q)
-    );
-  }
-
-  // 3. Ordenar
-  if (sort === "price-asc") filtered.sort((a, b) => a.price - b.price);
-  if (sort === "price-desc") filtered.sort((a, b) => b.price - a.price);
-  if (sort === "name") filtered.sort((a, b) => a.name.localeCompare(b.name, "es"));
-
-  // 4. Sin resultados
-  if (filtered.length === 0) {
-    grid.innerHTML = `
-      <div class="products-empty">
-        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <p>No se encontraron productos</p>
-        <span>${search.trim() ? `Sin resultados para "${escapeHtml(search.trim())}"` : "No hay productos en esta categoría"}</span>
-        ${search.trim() ? `<button onclick="clearProductSearch()">Limpiar búsqueda</button>` : ""}
-      </div>`;
-    return;
-  }
-
-  // 5. Renderizar cards
-  grid.innerHTML = filtered.map(product => {
-    const discount = product.originalPrice
-      ? Math.round((1 - product.price / product.originalPrice) * 100)
-      : 0;
-    const waMsg = encodeURIComponent(`Hola Fanil, me interesa el producto: ${product.name}`);
-
-    return `
+function renderCard(product) {
+  const discount = product.originalPrice
+    ? Math.round((1 - product.price / product.originalPrice) * 100)
+    : 0;
+  const waMsg = encodeURIComponent(`Hola Fanil, me interesa el producto: ${product.name}`);
+  return `
       <div class="product-card${product.originalPrice ? ' product-card--offer' : ''}">
         <div class="product-img-wrapper" onclick="openQuickView(${product.id})" title="Ver detalle">
           <img
@@ -2009,9 +1973,82 @@ function renderProducts(filter = currentFilter, search = currentSearch, sort = c
             </div>
           </div>
         </div>
-      </div>
-    `;
-  }).join("");
+      </div>`;
+}
+
+function loadMoreProducts() {
+  currentPage++;
+  const end = currentPage * PRODUCTS_PER_PAGE;
+  const toAdd = filteredCache.slice((currentPage - 1) * PRODUCTS_PER_PAGE, end);
+  const grid = document.getElementById("productsGrid");
+  const btn = document.getElementById("loadMoreBtn");
+  if (btn) btn.remove();
+  toAdd.forEach(p => { grid.insertAdjacentHTML("beforeend", renderCard(p)); });
+  if (end < filteredCache.length) {
+    const remaining = filteredCache.length - end;
+    grid.insertAdjacentHTML("beforeend",
+      `<div class="load-more-wrap" id="loadMoreBtn">
+        <button class="btn btn-outline btn-load-more" onclick="loadMoreProducts()">
+          Ver más productos
+          <span class="load-more-count">(${remaining} restantes)</span>
+        </button>
+      </div>`);
+  }
+}
+
+function renderProducts(filter = currentFilter, search = currentSearch, sort = currentSort) {
+  currentFilter = filter;
+  currentSearch = search;
+  currentSort = sort;
+  currentPage = 1;
+
+  const grid = document.getElementById("productsGrid");
+
+  // 1. Filtrar por categoría
+  let filtered = filter === "todos" ? [...products] : products.filter(p => p.category === filter);
+
+  // 2. Filtrar por búsqueda
+  if (search.trim()) {
+    const q = search.toLowerCase().trim();
+    filtered = filtered.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q) ||
+      p.categoryLabel.toLowerCase().includes(q)
+    );
+  }
+
+  // 3. Ordenar
+  if (sort === "price-asc") filtered.sort((a, b) => a.price - b.price);
+  if (sort === "price-desc") filtered.sort((a, b) => b.price - a.price);
+  if (sort === "name") filtered.sort((a, b) => a.name.localeCompare(b.name, "es"));
+
+  filteredCache = filtered;
+
+  // 4. Sin resultados
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="products-empty">
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No se encontraron productos</p>
+        <span>${search.trim() ? `Sin resultados para "${escapeHtml(search.trim())}"` : "No hay productos en esta categoría"}</span>
+        ${search.trim() ? `<button onclick="clearProductSearch()">Limpiar búsqueda</button>` : ""}
+      </div>`;
+    return;
+  }
+
+  // 5. Renderizar primera página + botón "Ver más"
+  const firstPage = filtered.slice(0, PRODUCTS_PER_PAGE);
+  let html = firstPage.map(p => renderCard(p)).join("");
+  if (filtered.length > PRODUCTS_PER_PAGE) {
+    const remaining = filtered.length - PRODUCTS_PER_PAGE;
+    html += `<div class="load-more-wrap" id="loadMoreBtn">
+      <button class="btn btn-outline btn-load-more" onclick="loadMoreProducts()">
+        Ver más productos
+        <span class="load-more-count">(${remaining} restantes)</span>
+      </button>
+    </div>`;
+  }
+  grid.innerHTML = html;
 }
 
 function filterProducts(filter) {
