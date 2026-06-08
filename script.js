@@ -2069,7 +2069,12 @@ function clearProductSearch() {
 }
 
 function scrollToProducts() {
-  document.getElementById("productos").scrollIntoView({ behavior: "smooth" });
+  const grid = document.getElementById("productsGrid");
+  if (!grid) return;
+  const navbar = document.getElementById("navbar");
+  const navH = navbar ? navbar.offsetHeight : 64;
+  const top = grid.getBoundingClientRect().top + window.pageYOffset - navH - 24;
+  window.scrollTo({ top, behavior: "smooth" });
 }
 
 // Botones de filtro
