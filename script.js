@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    FANIL — JavaScript principal
    ============================================================ */
 
@@ -35,7 +35,7 @@ const products = [
     categoryLabel: "Detergentes",
     price: 3700,
     originalPrice: 5500,
-    image: "img/brinks-detergente-5lts.png",
+    image: "img/brinks-detergente-5lts.jpg",
     emoji: "🧺",
     badge: "popular",
     description: "Detergente líquido de alta eficiencia para toda la ropa."
@@ -46,7 +46,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 3700,
-    image: "img/brinks-detergente-4en1.png",
+    image: "img/brinks-detergente-4en1.jpg",
     emoji: "🧺",
     description: "4 acciones en 1: limpia, suaviza, protege y perfuma."
   },
@@ -56,7 +56,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 3700,
-    image: "img/brinks-detergente-suavizante-5lts.png",
+    image: "img/brinks-detergente-suavizante-5lts.jpg",
     emoji: "🧺",
     description: "Con suavizante incluido. Deja la ropa perfecta y perfumada."
   },
@@ -67,7 +67,7 @@ const products = [
     categoryLabel: "Detergentes",
     price: 4500,
     originalPrice: 6200,
-    image: "img/detergente-biofrescura-3lts.png",
+    image: "img/detergente-biofrescura-3lts.jpg",
     emoji: "🧺",
     description: "Fórmula concentrada para una limpieza profunda."
   },
@@ -77,7 +77,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 4500,
-    image: "img/detergente-biofrescura-concentrado-3lts.png",
+    image: "img/detergente-biofrescura-concentrado-3lts.jpg",
     emoji: "🧺",
     description: "Alta concentración, rinde el doble. Aroma fresco duradero."
   },
@@ -87,7 +87,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 3700,
-    image: "img/detergente-multiaccion-5lts.png",
+    image: "img/detergente-multiaccion-5lts.jpg",
     emoji: "🧺",
     description: "Elimina manchas difíciles con facilidad. Máximo rendimiento."
   },
@@ -97,7 +97,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 3000,
-    image: "img/detergente-ro-5lts.png",
+    image: "img/detergente-ro-5lts.jpg",
     emoji: "🧺",
     description: "Ideal para lavadora y lavado a mano. Gran rendimiento."
   },
@@ -107,7 +107,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 3700,
-    image: "img/brinks-detergente-suavizante-naranjo.png",
+    image: "img/brinks-detergente-suavizante-naranjo.jpg",
     emoji: "🧺",
     description: "Fragancia cítrica de naranja con suavizante integrado."
   },
@@ -117,7 +117,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 3700,
-    image: "img/brinks-detergente-suavizante-sin-colorante.png",
+    image: "img/brinks-detergente-suavizante-sin-colorante.jpg",
     emoji: "🧺",
     description: "Fórmula sin colorantes, suave para pieles sensibles."
   },
@@ -127,7 +127,7 @@ const products = [
     category: "detergentes",
     categoryLabel: "Detergentes",
     price: 1100,
-    image: "img/detergente-omo-400ml.png",
+    image: "img/detergente-omo-400ml.jpg",
     emoji: "🧺",
     badge: "nuevo",
     description: "Formato compacto de la marca líder. Eficaz en agua fría."
@@ -141,7 +141,7 @@ const products = [
     categoryLabel: "Lavalozas",
     price: 2000,
     originalPrice: 2900,
-    image: "img/lavalosas-concentrado-2l.png",
+    image: "img/lavalosas-concentrado-2l.jpg",
     emoji: "🍽️",
     description: "Fórmula concentrada que elimina la grasa al instante."
   },
@@ -151,7 +151,7 @@ const products = [
     category: "lavalozas",
     categoryLabel: "Lavalozas",
     price: 2000,
-    image: "img/brinks-lavaloza-pomelo-menta-2lts.png",
+    image: "img/brinks-lavaloza-pomelo-menta-2lts.jpg",
     emoji: "🍋",
     description: "Aroma cítrico y refrescante. Suave con tus manos."
   },
@@ -161,7 +161,7 @@ const products = [
     category: "lavalozas",
     categoryLabel: "Lavalozas",
     price: 2000,
-    image: "img/brinks-lavalozas-concentrado-2lts.png",
+    image: "img/brinks-lavalozas-concentrado-2lts.jpg",
     emoji: "🍽️",
     description: "Alta concentración para mayor rendimiento por litro."
   },
@@ -171,7 +171,7 @@ const products = [
     category: "lavalozas",
     categoryLabel: "Lavalozas",
     price: 1000,
-    image: "img/lavaloza-teddy-500ml.png",
+    image: "img/lavaloza-teddy-500ml.jpg",
     emoji: "🍽️",
     description: "Formato práctico para uso diario. Eficaz y económico."
   },
@@ -181,7 +181,7 @@ const products = [
     category: "lavalozas",
     categoryLabel: "Lavalozas",
     price: 1300,
-    image: "img/quix_500ml.png",
+    image: "img/quix_500ml.jpg",
     emoji: "🍽️",
     badge: "popular",
     description: "La marca clásica de confianza para el lavado de loza."
@@ -194,7 +194,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 500,
-    image: "img/jabon-lux.png",
+    image: "img/jabon-lux.jpg",
     emoji: "🧼",
     description: "Jabón suave con hidratantes naturales. Piel suave y perfumada."
   },
@@ -204,7 +204,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 500,
-    image: "img/jabon-lux-jasmine.png",
+    image: "img/jabon-lux-jasmine.jpg",
     emoji: "🧼",
     description: "Fragancia floral de jazmín. Hidrata y perfuma la piel."
   },
@@ -214,7 +214,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1000,
-    image: "img/jabon-popeye.png",
+    image: "img/jabon-popeye.jpg",
     emoji: "🧼",
     description: "Jabón multiuso potente. Ideal para el lavado a mano."
   },
@@ -224,7 +224,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1000,
-    image: "img/jabon-barra-dove.png",
+    image: "img/jabon-barra-dove.jpg",
     emoji: "🧼",
     badge: "popular",
     description: "Con 1/4 de crema hidratante. Cuida tu piel en cada lavado."
@@ -235,7 +235,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1000,
-    image: "img/jabon-barra-protex-avena.png",
+    image: "img/jabon-barra-protex-avena.jpg",
     emoji: "🧼",
     description: "Protección antibacterial con avena. Suave con la piel."
   },
@@ -245,7 +245,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-barra-lesancy-almendras.png",
+    image: "img/jabon-barra-lesancy-almendras.jpg",
     emoji: "🧼",
     description: "Enriquecido con aceite de almendras. Aroma suave y agradable."
   },
@@ -255,7 +255,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-barra-lesancy-karite.png",
+    image: "img/jabon-barra-lesancy-karite.jpg",
     emoji: "🧼",
     badge: "nuevo",
     description: "Con manteca de karité para una hidratación profunda."
@@ -266,7 +266,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-barra-lesancy-hygienic.png",
+    image: "img/jabon-barra-lesancy-hygienic.jpg",
     emoji: "🧼",
     description: "Fórmula higiénica de limpieza profunda para toda la familia."
   },
@@ -276,7 +276,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-ballerina-avena.png",
+    image: "img/jabon-liquido-ballerina-avena.jpg",
     emoji: "🧴",
     description: "Jabón líquido con avena. Suave y nutritivo para las manos."
   },
@@ -286,7 +286,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-ballerina-eucalipto.png",
+    image: "img/jabon-liquido-ballerina-eucalipto.jpg",
     emoji: "🧴",
     description: "Aroma fresco a eucalipto. Limpieza efectiva con toque herbal."
   },
@@ -296,7 +296,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-cremoso-yogurt-arandanos.png",
+    image: "img/jabon-liquido-cremoso-yogurt-arandanos.jpg",
     emoji: "🧴",
     description: "Textura cremosa con yogurt y arándanos. Piel suave y nutrida."
   },
@@ -306,7 +306,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-hipoalergenico.png",
+    image: "img/jabon-liquido-hipoalergenico.jpg",
     emoji: "🧴",
     description: "Formulado para pieles sensibles. Sin perfume ni colorantes."
   },
@@ -316,7 +316,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-io-avena.png",
+    image: "img/jabon-liquido-io-avena.jpg",
     emoji: "🧴",
     description: "Con extracto de avena. Hidrata y suaviza en cada lavado."
   },
@@ -326,7 +326,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-io-crema-humectante.png",
+    image: "img/jabon-liquido-io-crema-humectante.jpg",
     emoji: "🧴",
     description: "Crema humectante de uso diario. Deja las manos suaves y protegidas."
   },
@@ -336,7 +336,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-io-marina.png",
+    image: "img/jabon-liquido-io-marina.jpg",
     emoji: "🧴",
     badge: "nuevo",
     description: "Fragancia marina fresca y limpia. Ideal para el baño."
@@ -347,7 +347,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-io-rosas.png",
+    image: "img/jabon-liquido-io-rosas.jpg",
     emoji: "🧴",
     description: "Delicada fragancia a rosas. Limpieza suave con aroma floral."
   },
@@ -357,7 +357,7 @@ const products = [
     category: "jabones-limpieza",
     categoryLabel: "Jabones",
     price: 1300,
-    image: "img/jabon-liquido-io-violeta.png",
+    image: "img/jabon-liquido-io-violeta.jpg",
     emoji: "🧴",
     description: "Aroma suave a violeta con fórmula hidratante para manos delicadas."
   },
@@ -367,7 +367,7 @@ const products = [
     category: "limpiapisos",
     categoryLabel: "Limpiapisos",
     price: 1000,
-    image: "img/limpiapisos-citrico.png",
+    image: "img/limpiapisos-citrico.jpg",
     emoji: "✨",
     description: "Limpieza profunda de pisos con agradable aroma cítrico."
   },
@@ -377,7 +377,7 @@ const products = [
     category: "lavalozas",
     categoryLabel: "Lavalozas",
     price: 1300,
-    image: "img/lavalozas-virginia1l.png",
+    image: "img/lavalozas-virginia1l.jpg",
     emoji: "🍽️",
     description: "Producto multipropósito para un hogar perfectamente limpio."
   },
@@ -387,7 +387,7 @@ const products = [
     category: "limpiapisos",
     categoryLabel: "Limpiapisos",
     price: 1000,
-    image: "img/limpiapisos-brillex-900ml-lavanda.png",
+    image: "img/limpiapisos-brillex-900ml-lavanda.jpg",
     emoji: "✨",
     description: "Aroma relajante a lavanda. Limpia y brilla en un solo paso."
   },
@@ -397,7 +397,7 @@ const products = [
     category: "limpiapisos",
     categoryLabel: "Limpiapisos",
     price: 1800,
-    image: "img/limpiapisos-brinks-2lts-lavanda.png",
+    image: "img/limpiapisos-brinks-2lts-lavanda.jpg",
     emoji: "✨",
     description: "Formato familiar con fragancia suave a lavanda. Gran rendimiento."
   },
@@ -407,7 +407,7 @@ const products = [
     category: "limpiapisos",
     categoryLabel: "Limpiapisos",
     price: 1800,
-    image: "img/limpiapisos-brinks-2lts-manzana-canela.png",
+    image: "img/limpiapisos-brinks-2lts-manzana-canela.jpg",
     emoji: "✨",
     description: "Fragancia cálida a manzana y canela. Deja el hogar perfumado."
   },
@@ -418,7 +418,7 @@ const products = [
     categoryLabel: "Limpiapisos",
     price: 2000,
     originalPrice: 2800,
-    image: "img/limpiapisos-spum-variedades.png",
+    image: "img/limpiapisos-spum-variedades.jpg",
     emoji: "✨",
     description: "Disponible en múltiples aromas. Limpieza efectiva para todo tipo de pisos."
   },
@@ -442,7 +442,7 @@ const products = [
     category: "cuidado-personal",
     categoryLabel: "Cuidado Personal",
     price: 8700,
-    image: "img/nivea-crema-corporal-1000ml.png",
+    image: "img/nivea-crema-corporal-1000ml.jpg",
     emoji: "🧴",
     badge: "popular",
     description: "Para piel áspera y extra seca. Regeneración intensiva con glicerina."
@@ -546,7 +546,7 @@ const products = [
     category: "accesorios",
     categoryLabel: "Accesorios",
     price: 2500,
-    image: "img/don-ahorrito-bolsas-90x120.png",
+    image: "img/don-ahorrito-bolsas-90x120.jpg",
     emoji: "🗑️",
     description: "10 bolsas por paquete. Tamaño contenedor municipal 90×120 cm."
   },
@@ -629,7 +629,7 @@ const products = [
     category: "ambiental",
     categoryLabel: "Ambiental",
     price: 1000,
-    image: "img/don-ahorrito-ambiental-antitabaco.png",
+    image: "img/don-ahorrito-ambiental-antitabaco.jpg",
     emoji: "🌿",
     description: "Don Ahorrito. Elimina el olor a tabaco al instante. 400 ml."
   },
@@ -650,7 +650,7 @@ const products = [
     category: "papeles",
     categoryLabel: "Papeles",
     price: 1000,
-    image: "img/swan-toalla-papel-12m.png",
+    image: "img/swan-toalla-papel-12m.jpg",
     emoji: "🧻",
     description: "Paquete 3 rollos × 12 m. Doble hoja, alta absorción para la cocina."
   },
@@ -720,7 +720,7 @@ const products = [
     category: "cuidado-personal",
     categoryLabel: "Cuidado Personal",
     price: 1000,
-    image: "img/schick-maquina-afeitar-mujer-sensible.png",
+    image: "img/schick-maquina-afeitar-mujer-sensible.jpg",
     emoji: "🪒",
     description: "Máquina de afeitar Schick Quattro femenina 4 hojas, piel sensible. Banda lubricante con aloe vera y vitamina E."
   },
@@ -783,7 +783,7 @@ const products = [
     category: "accesorios",
     categoryLabel: "Accesorios",
     price: 1800,
-    image: "img/virutex-escobillon-multiuso.png",
+    image: "img/virutex-escobillon-multiuso.jpg",
     emoji: "🧹",
     description: "Escobillón multiuso Virutex. Fibra media para limpieza eficiente en todo tipo de superficies interiores."
   },
@@ -793,7 +793,7 @@ const products = [
     category: "limpieza",
     categoryLabel: "Limpieza",
     price: 1500,
-    image: "img/teddy-toallas-humedas-desinfectante-80un.png",
+    image: "img/teddy-toallas-humedas-desinfectante-80un.jpg",
     emoji: "🧼",
     description: "80 toallas húmedas desinfectantes Teddy. Eliminan el 99,9% de bacterias. Ideales para superficies y manos."
   },
@@ -823,7 +823,7 @@ const products = [
     category: "limpieza",
     categoryLabel: "Limpieza",
     price: 1000,
-    image: "img/tanax-insecticida-polvo.png",
+    image: "img/tanax-insecticida-polvo.jpg",
     emoji: "🐛",
     description: "Insecticida en polvo Tanax. Acción inmediata contra hormigas, cucarachas, pulgas y otros insectos rastreros."
   },
@@ -905,7 +905,7 @@ const products = [
     category: "ambiental",
     categoryLabel: "Ambiental",
     price: 1000,
-    image: "img/don-ahorrito-ambiental-lavanda.png",
+    image: "img/don-ahorrito-ambiental-lavanda.jpg",
     emoji: "🌸",
     description: "Desodorante ambiental aroma lavanda. 400 ml. Elimina olores al instante."
   },
@@ -935,7 +935,7 @@ const products = [
     category: "accesorios",
     categoryLabel: "Accesorios",
     price: 500,
-    image: "img/don-ahorrito-bolsas-50x70.png",
+    image: "img/don-ahorrito-bolsas-50x70.jpg",
     emoji: "🗑️",
     description: "10 bolsas por paquete. Tamaño 50×70 cm para basureros pequeños."
   },
@@ -1122,7 +1122,7 @@ const products = [
     category: "acondicionador",
     categoryLabel: "Acondicionador",
     price: 1300,
-    image: "img/ballerina-acondicionador-manzana-frutilla-750ml.png",
+    image: "img/ballerina-acondicionador-manzana-frutilla-750ml.jpg",
     emoji: "🍓",
     description: "Manzana y Frutilla con Probiótico y Biotina. Para cabello frágil y quebradizo."
   },
@@ -1132,7 +1132,7 @@ const products = [
     category: "acondicionador",
     categoryLabel: "Acondicionador",
     price: 1800,
-    image: "img/familand-acondicionador-manzana-papaya-750ml.png",
+    image: "img/familand-acondicionador-manzana-papaya-750ml.jpg",
     emoji: "🍎",
     description: "Manzana y Papaya BIO. Sin sal, para cabello graso. Extractos 100% naturales."
   },
@@ -1152,7 +1152,7 @@ const products = [
     category: "acondicionador",
     categoryLabel: "Acondicionador",
     price: 1300,
-    image: "img/ballerina-acondicionador-mango-argan-750ml.png",
+    image: "img/ballerina-acondicionador-mango-argan-750ml.jpg",
     emoji: "🥭",
     description: "Mango y aceite de Argán. Para ondas y rizos controlados. Sin sulfatos."
   },
@@ -1174,7 +1174,7 @@ const products = [
     category: "shampoo",
     categoryLabel: "Shampoo",
     price: 1300,
-    image: "img/ballerina-shampoo-coco-cactus-750ml.png",
+    image: "img/ballerina-shampoo-coco-cactus-750ml.jpg",
     emoji: "🥥",
     description: "Agua de Coco y Flor de Cactus. Bajo en sulfatos. Para todo tipo de cabello."
   },
@@ -1214,7 +1214,7 @@ const products = [
     category: "shampoo",
     categoryLabel: "Shampoo",
     price: 1300,
-    image: "img/ballerina-shampoo-palta-almendras-750ml.png",
+    image: "img/ballerina-shampoo-palta-almendras-750ml.jpg",
     emoji: "🥑",
     description: "Palta/Aguacate y Almendras. Sin sal. Nutrición intensa para cabello dañado."
   },
@@ -1234,7 +1234,7 @@ const products = [
     category: "shampoo",
     categoryLabel: "Shampoo",
     price: 1300,
-    image: "img/ballerina-shampoo-bambu-ginseng-750ml.png",
+    image: "img/ballerina-shampoo-bambu-ginseng-750ml.jpg",
     emoji: "🎋",
     description: "Bambú y Ginseng con Colágeno. Para cabello fino y sin volumen."
   },
@@ -1339,7 +1339,7 @@ const products = [
     category: "quitamanchas",
     categoryLabel: "Suavizante y Quitamanchas",
     price: 500,
-    image: "img/vanish-polvo-blanco-30g.png",
+    image: "img/vanish-polvo-blanco-30g.jpg",
     emoji: "✨",
     description: "Quitamanchas en polvo para ropa blanca Oxi Action. Deja la ropa impecable."
   },
@@ -1360,7 +1360,7 @@ const products = [
     category: "papeles",
     categoryLabel: "Papeles",
     price: 2500,
-    image: "img/abolengo-toalla-papel-xl-100m.png",
+    image: "img/abolengo-toalla-papel-xl-100m.jpg",
     emoji: "🧻",
     description: "Rollo gigante XL de 100 metros doble hoja. Alta absorción para hogar y negocio."
   },
@@ -1442,7 +1442,7 @@ const products = [
     category: "higiene-femenina",
     categoryLabel: "Higiene Femenina",
     price: 1900,
-    image: "img/ladysoft-ultradelgada-16un.png",
+    image: "img/ladysoft-ultradelgada-16un.jpg",
     emoji: "🌸",
     description: "Tela ultraseca con alas. Ultradelgada para uso diario con máximo confort."
   },
@@ -1464,7 +1464,7 @@ const products = [
     category: "cera-pisos",
     categoryLabel: "Cera de Pisos",
     price: 2500,
-    image: "img/cera-pintura-ryr-2lts.png",
+    image: "img/cera-pintura-ryr-2lts.jpg",
     emoji: "🪣",
     description: "Cera pintura para pisos de cemento. Da color y brillo duradero en formato familiar de 2 litros."
   },
@@ -1474,7 +1474,7 @@ const products = [
     category: "cera-pisos",
     categoryLabel: "Cera de Pisos",
     price: 1600,
-    image: "img/cera-pintura-ryr-1lt.png",
+    image: "img/cera-pintura-ryr-1lt.jpg",
     emoji: "🪣",
     description: "Cera pintura premium para pisos de cemento. Fórmula mejorada que protege y embellece en 1 litro."
   },
@@ -1484,7 +1484,7 @@ const products = [
     category: "cera-pisos",
     categoryLabel: "Cera de Pisos",
     price: 1400,
-    image: "img/cera-brillina-tierra-color-360cc.png",
+    image: "img/cera-brillina-tierra-color-360cc.jpg",
     emoji: "🪣",
     description: "Cera crema que nutre, protege e impermeabiliza pisos renovando el color. Fórmula antideslizante de secado rápido."
   },
@@ -1598,7 +1598,7 @@ const products = [
     category: "utensilios-cocina",
     categoryLabel: "Utensilios de Cocina",
     price: 2000,
-    image: "img/ronson-chispero-cocina.png",
+    image: "img/ronson-chispero-cocina.jpg",
     emoji: "🔥",
     description: "Encendedor piezoeléctrico Ronson para cocina. Tamaño grande para mayor comodidad y alcance."
   },
@@ -1648,7 +1648,7 @@ const products = [
     category: "utensilios-cocina",
     categoryLabel: "Utensilios de Cocina",
     price: 2000,
-    image: "img/vasos-atlanta-6un.png",
+    image: "img/vasos-atlanta-6un.jpg",
     emoji: "🥛",
     description: "Juego de 6 vasos de cristal Atlanta. Diseño clásico, resistente y elegante para uso diario."
   }
@@ -1660,7 +1660,7 @@ const products = [
     category: "cera-pisos",
     categoryLabel: "Cera de Pisos",
     price: 1100,
-    image: "img/ero-pintura-pisos-1lt-roja.png",
+    image: "img/ero-pintura-pisos-1lt-roja.jpg",
     emoji: "🪣",
     description: "Pintura para pisos roja marca ERO 1 litro. Ideal para superficies de cemento."
   },
@@ -1670,7 +1670,7 @@ const products = [
     category: "cera-pisos",
     categoryLabel: "Cera de Pisos",
     price: 4500,
-    image: "img/multiaccion-cera-pintura-5lts.png",
+    image: "img/multiaccion-cera-pintura-5lts.jpg",
     emoji: "🪣",
     description: "Cera pintura para pisos Multiacción en formato bidón de 5 litros. Gran rendimiento para superficies amplias."
   }
@@ -2078,12 +2078,12 @@ const themeToggle = document.getElementById("themeToggle");
 
 /* Logo único: cambia el src según color/tema activo (en vez de cargar 5 imágenes) */
 const LOGO_LIGHT = {
-  blue:   "img/logo-fanil-modo-claro-azul.png",
-  green:  "img/logo-fanil-para-modo-claro.png",
-  yellow: "img/logo-fanil-modo-claro-amarillo.png",
-  purple: "img/logo-fanil-modo-claro-morado.png"
+  blue:   "img/logo-fanil-modo-claro-azul.jpg",
+  green:  "img/logo-fanil-para-modo-claro.jpg",
+  yellow: "img/logo-fanil-modo-claro-amarillo.jpg",
+  purple: "img/logo-fanil-modo-claro-morado.jpg"
 };
-const LOGO_DARK = "img/logo-fanil.png";
+const LOGO_DARK = "img/logo-fanil.jpg";
 function updateLogo() {
   const img = document.getElementById("logoImg");
   if (!img) return;
