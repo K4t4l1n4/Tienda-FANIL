@@ -2172,6 +2172,15 @@ input, textarea { font-family: var(--font); }
   .container { padding: 0 16px; }
   .section { padding: 52px 0; }
 
+  /* Banner: ocultar último ítem ("Pago seguro…") para que no se corte */
+  .banner-items > .banner-item:last-child { display: none; }
+
+  /* Paleta de colores: anclar a la izquierda para que no salga de pantalla */
+  .color-palette {
+    right: auto;
+    left: 0;
+  }
+
   /* Hero refinado */
   .hero-inner { padding-top: 28px; padding-bottom: 28px; }
   .hero-title { font-size: clamp(1.9rem, 9vw, 2.5rem); letter-spacing: -0.03em; }
