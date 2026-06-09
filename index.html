@@ -10,12 +10,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fanil - Lo esencial para tu hogar">
   <meta property="og:description" content="Productos de aseo e higiene de calidad a precios accesibles. Envío a todo Chile.">
-  <meta property="og:image" content="img/logo-fanil.png">
+  <!-- IMPORTANTE: Reemplaza TUDOMINIO.cl con tu dominio real antes de publicar -->
+  <meta property="og:image" content="https://TUDOMINIO.cl/img/logo-fanil.png">
   <meta property="og:locale" content="es_CL">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Fanil - Lo esencial para tu hogar">
   <meta name="twitter:description" content="Productos de aseo e higiene de calidad a precios accesibles. Envío a todo Chile.">
-  <meta name="twitter:image" content="img/logo-fanil.png">
+  <meta name="twitter:image" content="https://TUDOMINIO.cl/img/logo-fanil.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -322,6 +323,48 @@
       </div>
     </section>
 
+    <!-- MARCAS -->
+    <section class="section-brands" id="marcas">
+      <div class="brands-label-row">
+        <span class="brands-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Marcas de confianza
+        </span>
+      </div>
+      <div class="brands-track">
+        <div class="brands-scroll">
+          <div class="brand-chip">Brink's</div>
+          <div class="brand-chip">Biofrescura</div>
+          <div class="brand-chip">OMO</div>
+          <div class="brand-chip">Quix</div>
+          <div class="brand-chip">Teddy</div>
+          <div class="brand-chip">Dove</div>
+          <div class="brand-chip">Le Sancy</div>
+          <div class="brand-chip">Protex</div>
+          <div class="brand-chip">Ballerina</div>
+          <div class="brand-chip">Lux</div>
+          <div class="brand-chip">Brillex</div>
+          <div class="brand-chip">Spum</div>
+          <div class="brand-chip">Virginia</div>
+          <div class="brand-chip">Popeye</div>
+          <div class="brand-chip" aria-hidden="true">Brink's</div>
+          <div class="brand-chip" aria-hidden="true">Biofrescura</div>
+          <div class="brand-chip" aria-hidden="true">OMO</div>
+          <div class="brand-chip" aria-hidden="true">Quix</div>
+          <div class="brand-chip" aria-hidden="true">Teddy</div>
+          <div class="brand-chip" aria-hidden="true">Dove</div>
+          <div class="brand-chip" aria-hidden="true">Le Sancy</div>
+          <div class="brand-chip" aria-hidden="true">Protex</div>
+          <div class="brand-chip" aria-hidden="true">Ballerina</div>
+          <div class="brand-chip" aria-hidden="true">Lux</div>
+          <div class="brand-chip" aria-hidden="true">Brillex</div>
+          <div class="brand-chip" aria-hidden="true">Spum</div>
+          <div class="brand-chip" aria-hidden="true">Virginia</div>
+          <div class="brand-chip" aria-hidden="true">Popeye</div>
+        </div>
+      </div>
+    </section>
+
     <!-- BARRA DE BENEFICIOS -->
     <section class="features-bar">
       <div class="container features-grid">
@@ -379,251 +422,114 @@
       </div>
     </section>
 
-    <!-- CATEGORÍAS — sección eliminada; los filtros viven en #productos -->
-    <section class="section" id="categorias" style="display:none">
+    <!-- SECTORES DEL HOGAR -->
+    <section class="section-rooms" id="sectores">
       <div class="container">
-        <div class="categories-grid">
+        <div class="section-header" style="margin-bottom:32px">
+          <h2 class="section-title">Explorar por sector</h2>
+          <p class="section-subtitle">Selecciona un espacio del hogar para ver sus productos</p>
+        </div>
+        <div class="rooms-grid" id="roomsGrid">
 
-          <div class="category-card" onclick="filterProducts('detergentes'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 6h18M3 12h18M3 18h18"/>
-                <rect x="2" y="3" width="20" height="18" rx="2"/>
+          <button class="room-card active" data-room="todos" aria-pressed="true">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
               </svg>
             </div>
-            <h3>Detergentes</h3>
-            <p>Para la ropa de toda la familia. Limpieza profunda y duradera.</p>
-            <span class="category-count">7 productos</span>
-          </div>
+            <div class="room-card-body">
+              <strong class="room-card-title">Todos</strong>
+              <span class="room-card-desc">Ver todos los productos</span>
+            </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('lavalozas'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+
+          <button class="room-card" data-room="cocina" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
                 <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
               </svg>
             </div>
-            <h3>Lavalozas</h3>
-            <p>Elimina la grasa al instante. Cuida tus manos mientras limpia.</p>
-            <span class="category-count">6 productos</span>
-          </div>
+            <div class="room-card-body">
+              <strong class="room-card-title">Cocina</strong>
+              <span class="room-card-desc">Lavaloza, esponjas, utensilios</span>
+            </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('jabones-limpieza'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <button class="room-card" data-room="bano" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
               </svg>
             </div>
-            <h3>Jabones</h3>
-            <p>Jabones y productos multiusos para el cuidado del hogar.</p>
-            <span class="category-count">2 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('limpiapisos'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21 L8 10 L16 10 L21 21"/>
-                <line x1="3" y1="21" x2="21" y2="21"/>
-                <line x1="8" y1="10" x2="8" y2="6"/>
-                <circle cx="8" cy="4" r="2"/>
-              </svg>
+            <div class="room-card-body">
+              <strong class="room-card-title">Baño</strong>
+              <span class="room-card-desc">Shampoo, jabones, papel higiénico</span>
             </div>
-            <h3>Limpiapisos</h3>
-            <p>Para pisos brillantes con fragancias duraderas.</p>
-            <span class="category-count">5 productos</span>
-          </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('papeles'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
-              </svg>
-            </div>
-            <h3>Papeles</h3>
-            <p>Papel higiénico, toallas de papel y servilletas para el hogar.</p>
-            <span class="category-count">7 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('animales'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5z"/>
-                <path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-                <circle cx="6" cy="8" r="2"/>
-                <circle cx="18" cy="8" r="2"/>
-              </svg>
-            </div>
-            <h3>Animales</h3>
-            <p>Arena sanitaria y productos de higiene para tus mascotas.</p>
-            <span class="category-count">1 producto</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('desodorantes'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
-                <path d="M10 2v3h4V2"/>
-                <circle cx="12" cy="14" r="2"/>
-                <path d="M12 10v2"/>
-              </svg>
-            </div>
-            <h3>Desodorantes</h3>
-            <p>Axe, Dove, Rexona y más para protección y frescura todo el día.</p>
-            <span class="category-count">9 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('utensilios-cocina'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
-                <path d="M7 2v20"/>
-                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 .6.4 1 1 1h4z"/>
-              </svg>
-            </div>
-            <h3>Utensilios de Cocina</h3>
-            <p>Exprimidores, encendedores, pilas, ampolletas y más para el hogar.</p>
-            <span class="category-count">7 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('cera-pisos'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="14" width="18" height="5" rx="1"/>
-                <path d="M5 14V9a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v5"/>
-                <path d="M8 8V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/>
-                <line x1="12" y1="19" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <h3>Cera de Pisos</h3>
-            <p>Ceras y pinturas para proteger, colorear y dar brillo a tus pisos.</p>
-            <span class="category-count">3 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('ambiental'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/>
-                <circle cx="12" cy="9" r="2.5"/>
-              </svg>
-            </div>
-            <h3>Desodorante Ambiental</h3>
-            <p>Aerosoles para ambientar y eliminar olores en el hogar.</p>
-            <span class="category-count">2 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('bano'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 17h10M5 21h14M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14"/>
-                <path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
-              </svg>
-            </div>
-            <h3>Baño</h3>
-            <p>Limpiadores de inodoro, pastillas y desinfectantes para el baño.</p>
-            <span class="category-count">3 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('cuidado-personal'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <button class="room-card" data-room="cuidado-personal" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
             </div>
-            <h3>Cuidado Personal</h3>
-            <p>Cremas, desodorantes y cuidado de la piel para toda la familia.</p>
-            <span class="category-count">3 productos</span>
-          </div>
+            <div class="room-card-body">
+              <strong class="room-card-title">Cuidado personal</strong>
+              <span class="room-card-desc">Desodorantes, cremas, higiene femenina</span>
+            </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('higiene-femenina'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/>
-                <path d="M12 12v10M9 19h6"/>
+          <button class="room-card" data-room="lavanderia" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18M3 12h18M3 18h18"/><rect x="2" y="3" width="20" height="18" rx="2"/>
               </svg>
             </div>
-            <h3>Higiene Femenina</h3>
-            <p>Toallas femeninas para el cuidado y bienestar de la mujer.</p>
-            <span class="category-count">3 productos</span>
-          </div>
+            <div class="room-card-body">
+              <strong class="room-card-title">Lavandería</strong>
+              <span class="room-card-desc">Detergentes, suavizante, quitamanchas</span>
+            </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('acondicionador'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3V6H9v6z"/>
-                <path d="M6 6h12M6 3h12"/>
-                <path d="M8 21c1.1.63 2.5 1 4 1s2.9-.37 4-1"/>
+          <button class="room-card" data-room="limpieza-hogar" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
               </svg>
             </div>
-            <h3>Acondicionador</h3>
-            <p>Acondicionadores para todo tipo de cabello en doypacks y frascos.</p>
-            <span class="category-count">6 productos</span>
-          </div>
+            <div class="room-card-body">
+              <strong class="room-card-title">Limpieza del hogar</strong>
+              <span class="room-card-desc">Limpiapisos, cloro, ceras, desinfectantes</span>
+            </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('shampoo'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a5 5 0 0 1 5 5v3H7V7a5 5 0 0 1 5-5z"/>
-                <path d="M7 10c0 5.5 2 9 5 9s5-3.5 5-9"/>
-                <path d="M9 21h6"/>
+          <button class="room-card" data-room="ambiental" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/>
               </svg>
             </div>
-            <h3>Shampoo</h3>
-            <p>Shampoos en doypack y frasco para todo tipo de cabello.</p>
-            <span class="category-count">7 productos</span>
-          </div>
+            <div class="room-card-body">
+              <strong class="room-card-title">Ambiental</strong>
+              <span class="room-card-desc">Aromatizadores, desodorantes ambientales</span>
+            </div>
+          </button>
 
-          <div class="category-card" onclick="filterProducts('higiene-bucal'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6.5 2h11a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H15l-1.5 14h-3L9 7H6.5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+          <button class="room-card" data-room="mascotas" aria-pressed="false">
+            <div class="room-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="10" r="3"/><path d="M7 22c0-3.3 2.2-6 5-6s5 2.7 5 6"/>
+                <circle cx="5.5" cy="8" r="2"/><circle cx="18.5" cy="8" r="2"/>
               </svg>
             </div>
-            <h3>Higiene Bucal</h3>
-            <p>Cepillos de dientes y productos para el cuidado dental.</p>
-            <span class="category-count">3 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('quitamanchas'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
-                <path d="M9 15h6"/>
-              </svg>
+            <div class="room-card-body">
+              <strong class="room-card-title">Mascotas</strong>
+              <span class="room-card-desc">Arena sanitaria y cuidado de animales</span>
             </div>
-            <h3>Suavizante y Quitamanchas</h3>
-            <p>Suavizantes concentrados y quitamanchas para toda la ropa.</p>
-            <span class="category-count">6 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('limpieza'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9.5 2h5L17 7H7L9.5 2z"/>
-                <path d="M7 7v3a5 5 0 0 0 10 0V7"/>
-                <path d="M12 12v7M9 19h6"/>
-              </svg>
-            </div>
-            <h3>Limpieza</h3>
-            <p>Cloro líquido, cloro gel y desinfectantes para el hogar.</p>
-            <span class="category-count">3 productos</span>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('accesorios'); scrollToProducts()">
-            <div class="category-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <h3>Accesorios Hogar</h3>
-            <p>Esponjas, bolsas, servilletas y más para tu hogar.</p>
-            <span class="category-count">3 productos</span>
-          </div>
+          </button>
 
         </div>
       </div>
@@ -633,32 +539,11 @@
     <section class="section section-alt" id="productos">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Nuestros Productos</h2>
-          <p class="section-subtitle">Todo lo esencial para tu hogar a precios accesibles</p>
+          <h2 class="section-title" id="productsTitle">Nuestros Productos</h2>
+          <p class="section-subtitle" id="productsSubtitle">Todo lo esencial para tu hogar a precios accesibles</p>
         </div>
         <div class="filter-sticky-area">
-          <div class="filter-bar" role="group" aria-label="Filtrar productos">
-            <button class="filter-btn active" data-filter="todos">Todos</button>
-            <button class="filter-btn" data-filter="detergentes">Detergentes</button>
-            <button class="filter-btn" data-filter="lavalozas">Lavalozas</button>
-            <button class="filter-btn" data-filter="jabones-limpieza">Jabones</button>
-            <button class="filter-btn" data-filter="limpiapisos">Limpiapisos</button>
-            <button class="filter-btn" data-filter="cuidado-personal">Cuidado Personal</button>
-            <button class="filter-btn" data-filter="papeles">Papeles</button>
-            <button class="filter-btn" data-filter="bano">Baño</button>
-            <button class="filter-btn" data-filter="ambiental">Ambiental</button>
-            <button class="filter-btn" data-filter="higiene-femenina">Higiene Femenina</button>
-            <button class="filter-btn" data-filter="limpieza">Limpieza</button>
-            <button class="filter-btn" data-filter="shampoo">Shampoo</button>
-            <button class="filter-btn" data-filter="acondicionador">Acondicionador</button>
-            <button class="filter-btn" data-filter="higiene-bucal">Higiene Bucal</button>
-            <button class="filter-btn" data-filter="quitamanchas">Suavizante y Quitamanchas</button>
-            <button class="filter-btn" data-filter="accesorios">Accesorios</button>
-            <button class="filter-btn" data-filter="cera-pisos">Cera de Pisos</button>
-            <button class="filter-btn" data-filter="utensilios-cocina">Utensilios de Cocina</button>
-            <button class="filter-btn" data-filter="desodorantes">Desodorantes</button>
-            <button class="filter-btn" data-filter="animales">Animales</button>
-          </div>
+          <div class="filter-bar" id="filterBar" role="group" aria-label="Filtrar productos"></div>
           <div class="search-sort-bar">
           <div class="search-wrap">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -680,48 +565,6 @@
       </div>
     </section>
 
-    <!-- MARCAS -->
-    <section class="section-brands" id="marcas">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Marcas que ofrecemos</h2>
-          <p class="section-subtitle">Trabajamos con las mejores marcas del mercado chileno</p>
-        </div>
-      </div>
-      <div class="brands-track">
-        <div class="brands-scroll">
-          <div class="brand-chip">Brink's</div>
-          <div class="brand-chip">Biofrescura</div>
-          <div class="brand-chip">OMO</div>
-          <div class="brand-chip">Quix</div>
-          <div class="brand-chip">Teddy</div>
-          <div class="brand-chip">Dove</div>
-          <div class="brand-chip">Le Sancy</div>
-          <div class="brand-chip">Protex</div>
-          <div class="brand-chip">Ballerina</div>
-          <div class="brand-chip">Lux</div>
-          <div class="brand-chip">Brillex</div>
-          <div class="brand-chip">Spum</div>
-          <div class="brand-chip">Virginia</div>
-          <div class="brand-chip">Popeye</div>
-          <!-- duplicado para efecto infinito (oculto a lectores de pantalla) -->
-          <div class="brand-chip" aria-hidden="true">Brink's</div>
-          <div class="brand-chip" aria-hidden="true">Biofrescura</div>
-          <div class="brand-chip" aria-hidden="true">OMO</div>
-          <div class="brand-chip" aria-hidden="true">Quix</div>
-          <div class="brand-chip" aria-hidden="true">Teddy</div>
-          <div class="brand-chip" aria-hidden="true">Dove</div>
-          <div class="brand-chip" aria-hidden="true">Le Sancy</div>
-          <div class="brand-chip" aria-hidden="true">Protex</div>
-          <div class="brand-chip" aria-hidden="true">Ballerina</div>
-          <div class="brand-chip" aria-hidden="true">Lux</div>
-          <div class="brand-chip" aria-hidden="true">Brillex</div>
-          <div class="brand-chip" aria-hidden="true">Spum</div>
-          <div class="brand-chip" aria-hidden="true">Virginia</div>
-          <div class="brand-chip" aria-hidden="true">Popeye</div>
-        </div>
-      </div>
-    </section>
 
     <!-- NOSOTROS -->
     <section class="section section-primary" id="nosotros">
@@ -791,7 +634,7 @@
             </div>
             <p class="t-quote">Excelente calidad a precios increíbles. Los detergentes Brink's duran el doble que otras marcas. Llegó rápido y bien embalado.</p>
             <div class="t-author">
-              <div class="t-avatar" style="background: #2563EB">MG</div>
+              <div class="t-avatar">MG</div>
               <div class="t-info">
                 <strong>María González</strong>
                 <span>Santiago, Región Metropolitana</span>
@@ -809,7 +652,7 @@
             </div>
             <p class="t-quote">Compro todo el aseo del hogar acá. Los precios son muy convenientes y la atención por WhatsApp es súper rápida. 100% recomendado.</p>
             <div class="t-author">
-              <div class="t-avatar" style="background: #16A34A">CR</div>
+              <div class="t-avatar t-avatar-alt">CR</div>
               <div class="t-info">
                 <strong>Carlos Rodríguez</strong>
                 <span>Valparaíso, Región de Valparaíso</span>
@@ -827,7 +670,7 @@
             </div>
             <p class="t-quote">Los jabones Dove y Le Sancy son mis favoritos. Los encargué el lunes y llegaron el miércoles. El packaging llegó perfecto, sin ningún daño.</p>
             <div class="t-author">
-              <div class="t-avatar" style="background: #7C3AED">AL</div>
+              <div class="t-avatar t-avatar-alt2">AL</div>
               <div class="t-info">
                 <strong>Ana López</strong>
                 <span>Concepción, Región del Biobío</span>
@@ -924,7 +767,6 @@
   <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
   <!-- Botón flotante de WhatsApp -->
-  <!-- IMPORTANTE: Reemplaza el número con tu número real -->
   <a class="wa-float"
      href="https://wa.me/56912345678?text=Hola%20Fanil%2C%20me%20interesa%20un%20producto"
      target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
