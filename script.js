@@ -3,6 +3,15 @@
    ============================================================ */
 
 /* =============================================
+   CONFIGURACIÓN — CAMBIAR ANTES DE PUBLICAR
+   ============================================= */
+const FANIL_PHONE = "56912345678";          // ← Reemplaza con tu número real (sin + ni espacios)
+const FANIL_EMAIL = "contacto@fanil.cl";    // ← Reemplaza con tu email real
+const FANIL_WA_BASE = `https://wa.me/${FANIL_PHONE}`;
+const FANIL_WA_DEFAULT_TEXT = "Hola%20Fanil%2C%20me%20interesa%20un%20producto";
+
+
+/* =============================================
    UTILIDADES
    ============================================= */
 function formatPrice(price) {
@@ -1818,7 +1827,7 @@ function updateCartUI() {
   const waBtn = document.getElementById("cartWaBtn");
   if (waBtn) {
     waBtn.href = count > 0
-      ? `https://wa.me/56912345678?text=${buildCartWaMessage()}`
+      ? `${FANIL_WA_BASE}?text=${buildCartWaMessage()}`
       : "#";
   }
 }
@@ -1922,6 +1931,184 @@ document.getElementById("clearCartBtn").addEventListener("click", clearCart);
 
 
 /* =============================================
+   SECTORES DEL HOGAR
+   ============================================= */
+
+const ROOMS = [
+  {
+    id: "cocina",
+    label: "Cocina",
+    desc: "Lavaloza, esponjas, utensilios y más",
+    categories: ["lavalozas", "accesorios", "utensilios-cocina", "papeles"],
+    svg: '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 .6.4 1 1 1h4z"/>'
+  },
+  {
+    id: "bano",
+    label: "Baño",
+    desc: "Shampoo, jabones, papel higiénico y más",
+    categories: ["shampoo", "acondicionador", "jabones-limpieza", "higiene-bucal", "bano", "papeles"],
+    svg: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>'
+  },
+  {
+    id: "cuidado-personal",
+    label: "Cuidado personal",
+    desc: "Desodorantes, cremas e higiene femenina",
+    categories: ["cuidado-personal", "desodorantes", "higiene-femenina"],
+    svg: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>'
+  },
+  {
+    id: "lavanderia",
+    label: "Lavandería",
+    desc: "Detergentes, suavizante y quitamanchas",
+    categories: ["detergentes", "quitamanchas"],
+    svg: '<path d="M3 6h18M3 12h18M3 18h18"/><rect x="2" y="3" width="20" height="18" rx="2"/>'
+  },
+  {
+    id: "limpieza-hogar",
+    label: "Limpieza del hogar",
+    desc: "Limpiapisos, cloro, ceras y desinfectantes",
+    categories: ["limpiapisos", "limpieza", "cera-pisos"],
+    svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>'
+  },
+  {
+    id: "ambiental",
+    label: "Ambiental",
+    desc: "Aromatizadores y desodorantes ambientales",
+    categories: ["ambiental"],
+    svg: '<path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/>'
+  },
+  {
+    id: "mascotas",
+    label: "Mascotas",
+    desc: "Arena sanitaria y cuidado de animales",
+    categories: ["animales"],
+    svg: '<circle cx="12" cy="10" r="3"/><path d="M7 22c0-3.3 2.2-6 5-6s5 2.7 5 6"/><circle cx="5.5" cy="8" r="2"/><circle cx="18.5" cy="8" r="2"/>'
+  }
+];
+
+let currentRoom = null;
+let currentRoomFilter = "todos";
+
+function makeRoomSvg(paths) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+}
+
+function renderRooms() {
+  const grid = document.getElementById("roomsGrid");
+  if (!grid) return;
+
+  grid.innerHTML = ROOMS.map(room => {
+    const count = products.filter(p => room.categories.includes(p.category)).length;
+    return `
+      <button class="room-card${currentRoom === room.id ? ' active' : ''}"
+        data-room="${room.id}"
+        onclick="selectRoom('${room.id}')"
+        aria-pressed="${currentRoom === room.id}">
+        <div class="room-card-icon">${makeRoomSvg(room.svg)}</div>
+        <div class="room-card-body">
+          <strong class="room-card-title">${room.label}</strong>
+          <span class="room-card-count">${count} productos</span>
+        </div>
+      </button>`;
+  }).join('');
+}
+
+function selectRoom(roomId) {
+  if (currentRoom === roomId) { closeRoom(); return; }
+
+  currentRoom = roomId;
+  currentRoomFilter = "todos";
+
+  document.querySelectorAll('.room-card').forEach(card => {
+    const active = card.dataset.room === roomId;
+    card.classList.toggle('active', active);
+    card.setAttribute('aria-pressed', active);
+  });
+
+  const room = ROOMS.find(r => r.id === roomId);
+  if (!room) return;
+
+  document.getElementById('roomPanelTitle').textContent = room.label;
+  document.getElementById('roomPanelDesc').textContent = room.desc;
+  document.getElementById('roomPanelIcon').innerHTML = makeRoomSvg(room.svg);
+
+  renderRoomFilterBar(room);
+  renderRoomProducts("todos", room);
+
+  const panel = document.getElementById('roomPanel');
+  panel.removeAttribute('aria-hidden');
+  panel.classList.add('open');
+
+  setTimeout(() => {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 120);
+}
+
+function closeRoom() {
+  currentRoom = null;
+  currentRoomFilter = "todos";
+
+  document.querySelectorAll('.room-card').forEach(card => {
+    card.classList.remove('active');
+    card.setAttribute('aria-pressed', 'false');
+  });
+
+  const panel = document.getElementById('roomPanel');
+  panel.classList.remove('open');
+  panel.setAttribute('aria-hidden', 'true');
+}
+
+function filterRoomProducts(filter) {
+  currentRoomFilter = filter;
+  const room = ROOMS.find(r => r.id === currentRoom);
+  if (!room) return;
+
+  document.querySelectorAll('#roomFilterBar .filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === filter);
+  });
+
+  renderRoomProducts(filter, room);
+}
+
+function renderRoomFilterBar(room) {
+  const bar = document.getElementById('roomFilterBar');
+  if (!bar) return;
+
+  const filters = [{ id: "todos", label: `Todo ${room.label}` }];
+  room.categories.forEach(catId => {
+    const sample = products.find(p => p.category === catId);
+    if (sample) filters.push({ id: catId, label: sample.categoryLabel });
+  });
+
+  bar.innerHTML = filters.map(f =>
+    `<button class="filter-btn${currentRoomFilter === f.id ? ' active' : ''}"
+      data-filter="${f.id}"
+      onclick="filterRoomProducts('${f.id}')">${f.label}</button>`
+  ).join('');
+}
+
+function renderRoomProducts(filter, room) {
+  const grid = document.getElementById('roomProductsGrid');
+  if (!grid) return;
+
+  let pool = products.filter(p => room.categories.includes(p.category));
+  if (filter !== "todos") pool = pool.filter(p => p.category === filter);
+
+  if (pool.length === 0) {
+    grid.innerHTML = `
+      <div class="products-empty">
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>Sin productos en esta categoría</p>
+        <span>Prueba con otro filtro</span>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = pool.map(p => renderCard(p)).join('');
+}
+
+
+/* =============================================
    PRODUCTOS — renderizar, filtrar, buscar, ordenar
    ============================================= */
 let currentFilter = "todos";
@@ -1936,6 +2123,7 @@ function renderCard(product) {
     ? Math.round((1 - product.price / product.originalPrice) * 100)
     : 0;
   const waMsg = encodeURIComponent(`Hola Fanil, me interesa el producto: ${product.name}`);
+  const waUrl = `${FANIL_WA_BASE}?text=${waMsg}`;
   return `
       <div class="product-card${product.originalPrice ? ' product-card--offer' : ''}">
         <div class="product-img-wrapper" onclick="openQuickView(${product.id})" title="Ver detalle">
@@ -1963,7 +2151,7 @@ function renderCard(product) {
               <span class="product-price">${formatPrice(product.price)}</span>
             </div>
             <div class="product-card-actions">
-              <a class="btn-wa-card" href="https://wa.me/56912345678?text=${waMsg}" target="_blank" rel="noopener" title="Consultar por WhatsApp">
+              <a class="btn-wa-card" href="${waUrl}" target="_blank" rel="noopener" title="Consultar por WhatsApp">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
               </a>
               <button class="btn-add" onclick="addToCart(${product.id})">
@@ -2315,7 +2503,7 @@ function openQuickView(productId) {
   origEl.style.display = product.originalPrice ? 'block' : 'none';
 
   const waMsg = encodeURIComponent(`Hola Fanil, me interesa el producto: ${product.name}`);
-  document.getElementById('qvWaBtn').href = `https://wa.me/56912345678?text=${waMsg}`;
+  document.getElementById('qvWaBtn').href = `${FANIL_WA_BASE}?text=${waMsg}`;
 
   const addBtn = document.getElementById('qvAddBtn');
   addBtn.onclick = () => {
@@ -2349,6 +2537,7 @@ function trapFocus(container, e) {
   if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
   else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 }
+
 
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape' && e.key !== 'Tab') return;
@@ -2395,7 +2584,6 @@ function initScrollAnimations() {
   }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
 
   targets.forEach(el => {
-    // Solo animar elementos que están por debajo del viewport al cargar la página
     const rect = el.getBoundingClientRect();
     if (rect.top > window.innerHeight) {
       el.classList.add("anim-ready");
@@ -2429,7 +2617,6 @@ function initStickyFilter() {
   const area = document.querySelector('.filter-sticky-area');
   if (!area) return;
 
-  // Sentinel de 1px justo antes del área para detectar cuando pasa el borde superior
   const sentinel = document.createElement('div');
   sentinel.style.cssText = 'height:1px;margin-bottom:-1px;pointer-events:none;visibility:hidden;';
   area.parentNode.insertBefore(sentinel, area);
@@ -2452,6 +2639,13 @@ function initStickyFilter() {
    ============================================= */
 updateCartUI();
 initDynamicData();
+initContactInfo();
+document.addEventListener('DOMContentLoaded', function() {
+  renderRooms();
+  const roomPanelClose = document.getElementById('roomPanelClose');
+  if (roomPanelClose) roomPanelClose.addEventListener('click', closeRoom);
+});
+
 initScrollAnimations();
 initBackToTop();
 initStickyFilter();
@@ -2464,13 +2658,12 @@ if (bannerClose) {
     document.documentElement.setAttribute('data-banner-closed', '');
     sessionStorage.setItem('fanilBannerClosed', '1');
   });
-  // Restaurar si ya fue cerrado en esta sesión
   if (sessionStorage.getItem('fanilBannerClosed')) {
     document.documentElement.setAttribute('data-banner-closed', '');
   }
 }
 
-// Suave aparición al cargar (con respaldos para no dejar la página en blanco)
+// Suave aparición al cargar
 document.body.style.opacity = "0";
 function revealBody() {
   document.body.style.transition = "opacity 0.4s ease";
@@ -2478,14 +2671,14 @@ function revealBody() {
 }
 window.addEventListener("load", revealBody);
 document.addEventListener("DOMContentLoaded", () => setTimeout(revealBody, 50));
-setTimeout(revealBody, 2000); // failsafe por si 'load' nunca dispara
+setTimeout(revealBody, 2000);
 
 /* =============================================
    AUTO-SCROLL BARRA DE FILTROS (hover en bordes)
    ============================================= */
 (function initFilterBarScroll() {
-  const EDGE_ZONE = 90;   // px desde el borde que activa el scroll
-  const SPEED     = 6;    // px por frame
+  const EDGE_ZONE = 90;
+  const SPEED     = 6;
   let rafId       = null;
 
   function startScroll(bar, direction) {
@@ -2506,13 +2699,12 @@ setTimeout(revealBody, 2000); // failsafe por si 'load' nunca dispara
       const rect = bar.getBoundingClientRect();
       const x    = e.clientX - rect.left;
       stopScroll();
-      if (x < EDGE_ZONE)                  startScroll(bar, -1);
+      if (x < EDGE_ZONE)                   startScroll(bar, -1);
       else if (x > rect.width - EDGE_ZONE) startScroll(bar,  1);
     });
     bar.addEventListener('mouseleave', stopScroll);
   }
 
-  // Aplica cuando el DOM ya existe, y re-aplica si el elemento se recrea
   function tryAttach() {
     const bar = document.querySelector('.filter-bar');
     if (bar && !bar._scrollAttached) {
