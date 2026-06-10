@@ -2337,7 +2337,16 @@ input, textarea { font-family: var(--font); }
 }
 
 @media (max-width: 640px) {
-  /* Hacer que banner-items sea el contenedor de rotación */
+  /* Botón X absoluto para no robar espacio al contenedor de texto */
+  .info-banner-inner { position: relative; }
+  .banner-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* banner-items ocupa todo el ancho disponible */
   .banner-items {
     position: relative;
     overflow: hidden;
@@ -2352,6 +2361,7 @@ input, textarea { font-family: var(--font); }
     position: absolute;
     left: 0; right: 0;
     text-align: center;
+    justify-content: center;
     opacity: 0;
     animation: banner-item-in 12s ease-in-out infinite;
   }
