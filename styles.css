@@ -2327,21 +2327,43 @@ input, textarea { font-family: var(--font); }
    HOTFIXES MÓVIL v4 — Correcciones específicas para celular
    ============================================================ */
 
-/* ── 1. Banner informativo: scroll horizontal en lugar de cortar ── */
-@media (max-width: 640px) {
-  /* Sobrescribir ocultar último ítem definido en v3 */
-  .banner-items > .banner-item:last-child { display: flex; }
-  .banner-sep { display: inline; }
+/* ── 1. Banner informativo: rotación automática de ítems en móvil ── */
+@keyframes banner-item-in {
+  0%   { opacity: 0; transform: translateY(6px); }
+  8%   { opacity: 1; transform: translateY(0); }
+  30%  { opacity: 1; transform: translateY(0); }
+  38%  { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
 
+@media (max-width: 640px) {
+  /* Hacer que banner-items sea el contenedor de rotación */
   .banner-items {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    justify-content: flex-start;
-    gap: 10px;
-    -webkit-overflow-scrolling: touch;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    height: 18px;
+    justify-content: center;
+    gap: 0;
   }
-  .banner-items::-webkit-scrollbar { display: none; }
+
+  /* Cada ítem se posiciona absoluto y rota con animación */
+  .banner-items > .banner-item {
+    position: absolute;
+    left: 0; right: 0;
+    text-align: center;
+    opacity: 0;
+    animation: banner-item-in 12s ease-in-out infinite;
+  }
+  .banner-items > .banner-item:last-child { display: block; }
+
+  /* Offset por orden en el DOM: 1°, 3° y 5° hijo (los sep son 2° y 4°) */
+  .banner-items > span:nth-child(1) { animation-delay: 0s; }
+  .banner-items > span:nth-child(3) { animation-delay: 4s; }
+  .banner-items > span:nth-child(5) { animation-delay: 8s; }
+
+  /* Ocultar separadores — no tienen sentido en rotación */
+  .banner-sep { display: none !important; }
 }
 
 /* ── 2. Paleta de colores: centrada en el viewport (no sale de pantalla) ── */
